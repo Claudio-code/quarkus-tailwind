@@ -1,3 +1,13 @@
+FROM node:lts-alpine AS buildTailwind
+
+WORKDIR /cssbuild
+
+COPY src/main/frontend/ ./
+
+RUN npm i && npm run build
+
+
+
 FROM quay.io/quarkus/ubi-quarkus-mandrel-builder-image:jdk-17 AS build
 
 COPY --chown=quarkus:quarkus mvnw /code/mvnw
