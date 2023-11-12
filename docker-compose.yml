@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+    quarkus-tailwind:
+        container_name: quarkus-tailwind
+        build: .
+        ports:
+            - "8080:8080"
